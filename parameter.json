@@ -1,0 +1,216 @@
+{
+  "applications": {
+    "xyz": {
+      "ApplicationName": "xyz",
+      "DomainNamePrefix": "s3bucket",
+      "DomainNameSuffix": "groveops.net",
+      "HostedDnsZoneId": "Z074130239BXW7W2J0TY9",
+      "PriceClass": "PriceClass_All",
+      "EnableIPv6": "true",
+      "HttpVersion": "http2",
+      "EnableGeoRestriction": "false",
+      "GeoRestrictionType": "blacklist",
+      "GeoRestrictionLocations": "US",
+      "DefaultRootObject": "index.html",
+      "CustomResponseCode": "404",
+      "CustomErrorCode": "403",
+      "ErrorPagePath": "/404.html",
+      "ErrorCachingMinTTL": "300",
+      "ViewerProtocolPolicy": "allow-all",
+      "Compress": "true",
+      "FailoverStatusCodes": "500,502,503,504",
+      "FailoverQuantity": "4",
+      "MinimumProtocolVersion": "TLSv1.2_2021",
+      "Staging": "false",
+      "EnableLogging": "false",
+      "IncludeCookies": "false",
+      "EnableBackup": "true",
+      "LoggingPrefix": "xyz/",
+
+      "CacheBehaviors": [
+        {
+          "PathPattern": "/images/*",
+          "TargetOriginId": "primary-origin-xyz",
+          "ViewerProtocolPolicy": "allow-all",
+          "AllowedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "CachedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "Compress": true,
+          "DefaultTTL": 86400,
+          "MaxTTL": 31536000,
+          "MinTTL": 0,
+          "ForwardedValues": {
+            "QueryString": false
+          }
+        },
+        {
+          "PathPattern": "/api/*",
+          "TargetOriginId": "primary-origin-xyz",
+          "ViewerProtocolPolicy": "https-only",
+          "AllowedMethods": [
+            "GET",
+            "HEAD",
+            "OPTIONS"
+          ],
+          "CachedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "Compress": true,
+          "DefaultTTL": 60,
+          "MaxTTL": 300,
+          "MinTTL": 0,
+          "ForwardedValues": {
+            "QueryString": true
+          }
+        }
+      ]
+    },
+    "myapp2": {
+      "ApplicationName": "myapp2",
+      "DomainNamePrefix": "s3bucket",
+      "DomainNameSuffix": "groveops.net",
+      "HostedDnsZoneId": "Z074130239BXW7W2J0TY9",
+      "PriceClass": "PriceClass_200",
+      "EnableIPv6": "true",
+      "HttpVersion": "http2",
+      "EnableGeoRestriction": "true",
+      "GeoRestrictionType": "whitelist",
+      "GeoRestrictionLocations": "US",
+      "DefaultRootObject": "index.html",
+      "CustomResponseCode": "404",
+      "CustomErrorCode": "403",
+      "ErrorPagePath": "/error.html",
+      "ErrorCachingMinTTL": "600",
+      "ViewerProtocolPolicy": "https-only",
+      "Compress": "true",
+      "FailoverStatusCodes": "500,502,504",
+      "FailoverQuantity": "3",
+      "MinimumProtocolVersion": "TLSv1.2_2021",
+      "Staging": "false",
+      "EnableLogging": "false",
+      "IncludeCookies": "false",
+      "LoggingPrefix": "myapp2/",
+      "EnableBackup": "false",
+
+      "CacheBehaviors": [
+        {
+          "PathPattern": "/images/*",
+          "TargetOriginId": "primary-origin-myapp2",
+          "ViewerProtocolPolicy": "allow-all",
+          "AllowedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "CachedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "Compress": true,
+          "DefaultTTL": 86400,
+          "MaxTTL": 31536000,
+          "MinTTL": 0,
+          "ForwardedValues": {
+            "QueryString": false
+          }
+        },
+        {
+          "PathPattern": "/api/*",
+          "TargetOriginId": "primary-origin-myapp2",
+          "ViewerProtocolPolicy": "https-only",
+          "AllowedMethods": [
+            "GET",
+            "HEAD",
+            "OPTIONS"
+          ],
+          "CachedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "Compress": true,
+          "DefaultTTL": 60,
+          "MaxTTL": 300,
+          "MinTTL": 0,
+          "ForwardedValues": {
+            "QueryString": true
+          }
+        }
+      ]
+    },
+    "myapp4": {
+      "ApplicationName": "myapp4",
+      "DomainNamePrefix": "s3bucket",
+      "DomainNameSuffix": "groveops.net",
+      "HostedDnsZoneId": "Z074130239BXW7W2J0TY9",
+      "PriceClass": "PriceClass_200",
+      "EnableIPv6": "true",
+      "HttpVersion": "http2",
+      "EnableGeoRestriction": "true",
+      "GeoRestrictionType": "whitelist",
+      "GeoRestrictionLocations": "US,CA,GB",
+      "DefaultRootObject": "index.html",
+      "CustomResponseCode": "404",
+      "CustomErrorCode": "403",
+      "ErrorPagePath": "/404.html",
+      "ErrorCachingMinTTL": "600",
+      "ViewerProtocolPolicy": "allow-all",
+      "Compress": "true",
+      "FailoverStatusCodes": "500,502,504",
+      "FailoverQuantity": "3",
+      "MinimumProtocolVersion": "TLSv1.2_2021",
+      "Staging": "false",
+      "EnableLogging": "false",
+      "IncludeCookies": "false",
+      "LoggingPrefix": "myapp4/",
+      "EnableBackup": "false",
+      "CacheBehaviors": [
+        {
+          "PathPattern": "/images/*",
+          "TargetOriginId": "primary-origin-myapp4",
+          "ViewerProtocolPolicy": "allow-all",
+          "AllowedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "CachedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "Compress": true,
+          "DefaultTTL": 86400,
+          "MaxTTL": 31536000,
+          "MinTTL": 0,
+          "ForwardedValues": {
+            "QueryString": false
+          }
+        },
+        {
+          "PathPattern": "/api/*",
+          "TargetOriginId": "primary-origin-myapp4",
+          "ViewerProtocolPolicy": "https-only",
+          "AllowedMethods": [
+            "GET",
+            "HEAD",
+            "OPTIONS"
+          ],
+          "CachedMethods": [
+            "GET",
+            "HEAD"
+          ],
+          "Compress": true,
+          "DefaultTTL": 60,
+          "MaxTTL": 300,
+          "MinTTL": 0,
+          "ForwardedValues": {
+            "QueryString": true
+          }
+        }
+      ]
+    }
+  }
+}
